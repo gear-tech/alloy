@@ -240,7 +240,7 @@ where
         mut tx: SendableTx<N>,
     ) -> TransportResult<SendableTx<N>> {
         if let Some(builder) = tx.as_mut_builder() {
-            builder.set_max_fee_per_blob_gas(fillable);
+            builder.set_max_fee_per_blob_gas(fillable * 3);
         }
         Ok(tx)
     }
